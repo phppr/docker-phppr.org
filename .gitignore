@@ -47,5 +47,5 @@ jspm_packages
 .yarn-integrity
 
 bower_components
-assets/components
-assets/css
+assets/src/components
+
