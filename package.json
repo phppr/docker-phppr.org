@@ -1,0 +1,19 @@
+{
+  "name": "front-phppr",
+  "version": "1.0.0",
+  "description": "Portal do Grupo de Desenvolvedores PHP do Paraná",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/php-pr/site.git"
+  },
+  "author": "PHP PR Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/php-pr/site/issues"
+  },
+  "homepage": "https://github.com/php-pr/site#readme"
+}

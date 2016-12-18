@@ -1,0 +1,22 @@
+{
+  "name": "front-phppr",
+  "description": "Portal do Grupo de Desenvolvedores PHP do Paraná",
+  "main": "gulpfile.js",
+  "authors": [
+    "PHP PR Team"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/php-pr/site",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "3.3.7",
+    "jquery": "2.2.4",
+    "font-awesome": "^4.7.0"
+  }
+}
