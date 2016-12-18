@@ -15,5 +15,22 @@
   "bugs": {
     "url": "https://github.com/php-pr/site/issues"
   },
-  "homepage": "https://github.com/php-pr/site#readme"
+  "homepage": "https://github.com/php-pr/site#readme",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-preset-es2015": "^6.18.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-jsbeautifier": "^2.0.3",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.0.0",
+    "gulp-size": "^2.1.0",
+    "gulp-util": "^3.0.7",
+    "node-bourbon": "^4.2.8"
+  }
 }
