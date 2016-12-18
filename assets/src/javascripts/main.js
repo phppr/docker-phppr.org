@@ -1,2 +1,2 @@
 //=include jquery/dist/jquery.min.js
-//=include bootstrap/dist/js/bootstrap.min.js
+//=include bootstrap-sass/assets/javascripts/bootstrap.min.js

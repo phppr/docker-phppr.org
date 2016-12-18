@@ -15,8 +15,8 @@
     "tests"
   ],
   "devDependencies": {
-    "bootstrap": "3.3.7",
     "jquery": "2.2.4",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "bootstrap-sass": "^3.3.7"
   }
 }
