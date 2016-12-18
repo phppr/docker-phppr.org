@@ -12,6 +12,7 @@ const config = {
   css: './assets/css',
   js: './assets/js',
   images: './assets/img',
+  fonts: './assets/fonts',
   plumberErrorHandler: {
     errorHandler: $.notify.onError({
       title   : 'Gulp',
@@ -27,8 +28,8 @@ Gulp.task('stylesheets', () => {
       sourceComments: isProduction ? false : 'normal',
       includePaths: [
         Bourbon.includePaths,
-        'assets/src/components',
-        'assets/src/sass'
+        `${config.src}/components`,
+        `${config.src}/sass`
       ]
     }))
     .pipe($.autoprefixer({ browsers }))
@@ -47,8 +48,8 @@ Gulp.task('scripts', () => {
       extensions: 'js',
       includePaths: [
         'node_modules',
-        'assets/src/components',
-        'assets/src/javascripts'
+        `${config.src}/components`,
+        `${config.src}/javascripts`
       ]
     }))
     .pipe(isProduction ? $.uglify() : $.util.noop())
@@ -63,6 +64,14 @@ Gulp.task('images', function () {
     .pipe($.cache($.imagemin()))
     .pipe($.size({ title: 'Compress image', gzip: false, showFiles: true }))
     .pipe(Gulp.dest(config.images));
+});
+
+Gulp.task('fonts', () => {
+  return Gulp.src([
+    `${config.src}/components/font-awesome/fonts/*`,
+    `${config.src}/components/bootstrap-sass/assets/fonts/**/*`,
+  ])
+  .pipe(Gulp.dest(config.fonts));
 });
 
 Gulp.task('watch', ['stylesheets', 'scripts'], () => {
