@@ -11,6 +11,7 @@ const config = {
   src: './assets/src',
   css: './assets/css',
   js: './assets/js',
+  images: './assets/img',
   plumberErrorHandler: {
     errorHandler: $.notify.onError({
       title   : 'Gulp',
@@ -55,6 +56,13 @@ Gulp.task('scripts', () => {
     .pipe($.size({ title: 'Build javascripts', gzip: false, showFiles: true }))
     .pipe(Gulp.dest(config.js))
     .pipe($.plumber.stop());
+});
+
+Gulp.task('images', function () {
+  return Gulp.src(`${config.src}/images/**/*`)
+    .pipe($.cache($.imagemin()))
+    .pipe($.size({ title: 'Compress image', gzip: false, showFiles: true }))
+    .pipe(Gulp.dest(config.images));
 });
 
 Gulp.task('watch', ['stylesheets', 'scripts'], () => {
