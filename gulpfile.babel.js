@@ -61,6 +61,7 @@ Gulp.task('scripts', () => {
 
 Gulp.task('images', function () {
   return Gulp.src(`${config.src}/images/**/*`)
+    .pipe($.plumber(config.plumberErrorHandler))
     .pipe($.cache($.imagemin()))
     .pipe($.size({ title: 'Compress image', gzip: false, showFiles: true }))
     .pipe(Gulp.dest(config.images));
@@ -78,5 +79,7 @@ Gulp.task('watch', ['stylesheets', 'scripts'], () => {
   Gulp.watch(`${config.src}/sass/**/*`, ['stylesheets']);
   Gulp.watch(`${config.src}/javascripts/**/*`, ['scripts']);
 });
+
+Gulp.task('build', [ 'stylesheets', 'scripts', 'images', 'fonts' ]);
 
 Gulp.task('default', [ 'watch' ]);
