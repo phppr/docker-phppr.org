@@ -4,7 +4,7 @@
   "description": "Portal do Grupo de Desenvolvedores PHP do Paraná",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp watch"
   },
   "repository": {
     "type": "git",

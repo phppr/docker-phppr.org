@@ -67,11 +67,11 @@ Gulp.task('fonts', () => Gulp.src([
   ])
   .pipe(Gulp.dest(config.fonts)));
 
-Gulp.task('watch', ['stylesheets', 'scripts'], () => {
+Gulp.task('build', [ 'stylesheets', 'scripts', 'images', 'fonts' ]);
+
+Gulp.task('watch', ['build'], () => {
   Gulp.watch(`${config.src}/sass/**/*`, ['stylesheets']);
   Gulp.watch(`${config.src}/javascripts/**/*`, ['scripts']);
 });
-
-Gulp.task('build', [ 'stylesheets', 'scripts', 'images', 'fonts' ]);
 
 Gulp.task('default', [ 'watch' ]);
