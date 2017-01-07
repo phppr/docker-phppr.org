@@ -21,59 +21,51 @@ const config = {
   }
 };
 
-Gulp.task('stylesheets', () => {
-  return Gulp.src([`${config.src}/sass/*.sass`])
-    .pipe($.plumber(config.plumberErrorHandler))
-    .pipe($.sass({
-      sourceComments: isProduction ? false : 'normal',
-      includePaths: [
-        Bourbon.includePaths,
-        `${config.src}/components`,
-        `${config.src}/sass`
-      ]
-    }))
-    .pipe($.autoprefixer({ browsers }))
-    .pipe($.combineMq())
-    .pipe(isProduction ? $.cssnano() : $.jsbeautifier({ indentSize: 2 }))
-    .pipe(isProduction ? $.rename({ suffix: '.min' }) : $.util.noop())
-    .pipe($.size({ title: 'Build Stylesheets', gzip: false, showFiles: true }))
-    .pipe(Gulp.dest(config.css))
-    .pipe($.plumber.stop());
-});
+Gulp.task('stylesheets', () => Gulp.src([`${config.src}/sass/*.sass`])
+  .pipe($.plumber(config.plumberErrorHandler))
+  .pipe($.sass({
+    sourceComments: isProduction ? false : 'normal',
+    includePaths: [
+      Bourbon.includePaths,
+      `${config.src}/components`,
+      `${config.src}/sass`
+    ]
+  }))
+  .pipe($.autoprefixer({ browsers }))
+  .pipe($.combineMq())
+  .pipe(isProduction ? $.cssnano() : $.jsbeautifier({ indentSize: 2 }))
+  .pipe(isProduction ? $.rename({ suffix: '.min' }) : $.util.noop())
+  .pipe($.size({ title: 'Build Stylesheets', gzip: false, showFiles: true }))
+  .pipe(Gulp.dest(config.css))
+  .pipe($.plumber.stop()));
 
-Gulp.task('scripts', () => {
-  return Gulp.src([`${config.src}/javascripts/*.js`])
-    .pipe($.plumber(config.plumberErrorHandler))
-    .pipe($.include({
-      extensions: 'js',
-      includePaths: [
-        'node_modules',
-        `${config.src}/components`,
-        `${config.src}/javascripts`
-      ]
-    }))
-    .pipe(isProduction ? $.uglify() : $.util.noop())
-    .pipe(isProduction ? $.rename({ suffix: '.min' }) : $.util.noop())
-    .pipe($.size({ title: 'Build javascripts', gzip: false, showFiles: true }))
-    .pipe(Gulp.dest(config.js))
-    .pipe($.plumber.stop());
-});
+Gulp.task('scripts', () => Gulp.src([`${config.src}/javascripts/*.js`])
+  .pipe($.plumber(config.plumberErrorHandler))
+  .pipe($.include({
+    extensions: 'js',
+    includePaths: [
+      'node_modules',
+      `${config.src}/components`,
+      `${config.src}/javascripts`
+    ]
+  }))
+  .pipe(isProduction ? $.uglify() : $.util.noop())
+  .pipe(isProduction ? $.rename({ suffix: '.min' }) : $.util.noop())
+  .pipe($.size({ title: 'Build javascripts', gzip: false, showFiles: true }))
+  .pipe(Gulp.dest(config.js))
+  .pipe($.plumber.stop()));
 
-Gulp.task('images', function () {
-  return Gulp.src(`${config.src}/images/**/*`)
-    .pipe($.plumber(config.plumberErrorHandler))
-    .pipe($.cache($.imagemin()))
-    .pipe($.size({ title: 'Compress image', gzip: false, showFiles: true }))
-    .pipe(Gulp.dest(config.images));
-});
+Gulp.task('images', () => Gulp.src(`${config.src}/images/**/*`)
+  .pipe($.plumber(config.plumberErrorHandler))
+  .pipe($.cache($.imagemin()))
+  .pipe($.size({ title: 'Compress image', gzip: false, showFiles: true }))
+  .pipe(Gulp.dest(config.images)));
 
-Gulp.task('fonts', () => {
-  return Gulp.src([
+Gulp.task('fonts', () => Gulp.src([
     `${config.src}/components/font-awesome/fonts/*`,
     `${config.src}/components/bootstrap-sass/assets/fonts/**/*`,
   ])
-  .pipe(Gulp.dest(config.fonts));
-});
+  .pipe(Gulp.dest(config.fonts)));
 
 Gulp.task('watch', ['stylesheets', 'scripts'], () => {
   Gulp.watch(`${config.src}/sass/**/*`, ['stylesheets']);
