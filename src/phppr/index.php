@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <title>phppr.net - Grupo de Desenvolvedores PHP do Paraná</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    </head>
+    <body>
+        <header>
+            <nav role="navigation" class="navbar navbar-default fixed-nav" id="nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4 col-sm-4 page-scroll">
+                            <div class="col-md-4">
+                                <a href="#" class="logo">
+                                    <img src="assets/img/elefante.png">
+                                </a>
+                            </div>
+                            <div class="col-md-8 col-sm-10 col-xs-10" id="project-name">
+                                <h1>phppr<span>.net</span></h1>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <div id="social-icon" class="col-md-12 text-right">
+                                <a class="btn btn-default" href="#">
+                                    <i class="fa fa-github fa-lg" aria-hidden="true"></i>
+                                </a>
+                                <a class="btn btn-default" href="#">
+                                    <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>
+                                </a>
+                                <a class="btn btn-default" href="#">
+                                    <i class="fa fa-google-plus fa-lg" aria-hidden="true"></i>
+                                </a>
+                                <a class="btn btn-default" href="#">
+                                    <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div id="slogan" class="col-md-12 col-sm-12 col-xs-12">
+                                <h4 class="text-right">
+                                    Comunidade de desenvolvedores PHP do Estado do Paraná
+                                </h4>
+                            </div>
+                        </div>
+                        <button type="button" class="navbar-toggle toggle-menu menu-left push-body" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <i class="icon-bar"></i>
+                            <i class="icon-bar"></i>
+                            <i class="icon-bar"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row" id="menu">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left no-padding">
+                                    <ul id="primary_menu" class="nav navbar-nav navbar-left">
+                                        <li class="dropdown active">
+                                            <a href="#">Início</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle">
+                                            Sobre o PHP-PR
+                                            <i class="ion-chevron-down"></i>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle">
+                                            Artigos
+                                            <i class="ion-chevron-down"></i>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle">
+                                            Notícias
+                                            <i class="ion-chevron-down"></i>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle">
+                                            Encontre Profissionais
+                                            <i class="ion-chevron-down"></i>
+                                            </a>
+                                        </li>
+                                        <li><a href="#">Eventos</a></li>
+                                        <li><a href="#">Contato</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="row">
+            <div class="container">
+                <div class="col-md-8 col-xs-12">
+                    <div class="row">
+                        <div id="destaque" class="col-md-12 col-sm-12 colxs-12">
+                            <div class="col-md-6 col-xs-6">
+                                <a href="#" class="thumbnail">
+                                    <img alt="" src="assets/img/php-conference-brasil.jpg">
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-xs-6">
+                                <h2>PHP Conference 2016</h2>
+                                <p>Em 2016, a PHP Conference Brasil terá espaço para você acampar: O PHP Camping Esta iniciativa já foi um sucesso em 2015 e por isso estamos repetindo neste ano. Dias para acampar: 7, 8, 9 e 10 de Dezembro (entrada a partir de
+                                    quarta-feira, às 12h00, e saída no sábado, às 17h00).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="artigo" class="row">
+                        <div class="container">
+                            <h2>Últimos Artigos</h2>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="assets/img/silex.jpg" alt="...">
+                                <div class="caption">
+                                    <h4>Gerando notificações push com pushbullet e silex</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="assets/img/logo-composer-transparent.png" alt="...">
+                                <div class="caption">
+                                    <h4>Utilizando o composer: Install vs update</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="assets/img/php7.png" alt="...">
+                                <div class="caption">
+                                    <h4>PHP7: até 9 vezes mais rápido que o PHP 5.6</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sidebar" class="col-xs-12 col-md-4 pull-right">
+                    <div class="col-md-12">
+                        <h3>Eventos</h3>
+                    </div>
+                    <div class="event col-md-12">
+                        <h4>
+                            <span class="span-label label label-primary">08 de Julho</span>
+                        </h4>
+                        <h5>FISL 17</h5>
+                        <p>Fórum Internacional de Software Livre<br>Porto Alegre-RS</p>
+                    </div>
+                    <div class="event col-md-12">
+                        <h4>
+                            <span class="span-label label label-primary">18 de Setembro</span>
+                        </h4>
+                        <h5>Alagoas Dev Day</h5>
+                        <p>Fórum Internacional de Software Livre<br>Maceió-AL</p>
+                    </div>
+                    <div class="event col-md-12">
+                        <h4>
+                            <span class="span-label label label-primary">15 de Maio</span>
+                        </h4>
+                        <h5>Dev Camp</h5>
+                        <p>Conf. dos desenvolvedores de Campinas.<br>Campinas-SP</p>
+                    </div>
+                    <br>
+                    <br>
+                    <div id="link-event" class="col-md-12">
+                        <a href="#">Listar mais eventos...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="conteudo">
+            <div class="container">
+                <div class="col-md-12 col-xs-4">
+                    <h4 class="titulo-org">Parceiros:</h4>
+                    <div class="row">
+                        <ul class="logos-org">
+                            <li>
+                                <a target="_blank" href="#">
+                                    <img alt="ABRAPHP" class="col-md-2" src="assets/img/abraphp.png">
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="#">
+                                    <img alt="Loja PHP" class="col-md-2" src="assets/img/lojaphp.png">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <img src="assets/img/casadocodigo.png" class="col-md-2" alt="Casa do Código">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="col-md-3">
+                    <h3 class="color">Mapa do Site</h3>
+                    <nav class="footer-menu">
+                        <ul>
+                            <li><a href="#">Início</a></li>
+                            <li><a href="#">Sobre o PHP-PR</a></li>
+                            <li><a href="#">Artigos</a></li>
+                            <li><a href="#">Notícias</a></li>
+                            <li><a href="#">Encontre Profissionais</a></li>
+                            <li><a href="#">Eventos</a></li>
+                            <li><a href="#">Contato</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="color">Site Oficial:</h3>
+                    <a href="#" class="col-xs-6 col-md-8 thumbnail">
+                        <img src="assets/img/php-logo.png" alt="Logo PHP">
+                    </a>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="sub-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <p class="copyright text-right">
+                                Copyright © 2016 - Todos os direitos reservados| PHP Paraná.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
