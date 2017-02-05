@@ -32,6 +32,7 @@ node_modules
 jspm_packages
 bower_components
 src/assets/components
+src/themes/phppr/assets
 
 # Optional npm cache directory
 .npm
