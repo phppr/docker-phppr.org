@@ -31,7 +31,7 @@ build/Release
 node_modules
 jspm_packages
 bower_components
-assets/src/components
+src/assets/components
 
 # Optional npm cache directory
 .npm
@@ -47,10 +47,5 @@ assets/src/components
 
 # Yarn Integrity file
 .yarn-integrity
-
-assets/css
-assets/js
-assets/img
-assets/fonts
 
 docker-runtime

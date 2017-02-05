@@ -7,14 +7,14 @@ services:
       - "80:80"
     container_name: phppr_web
     volumes:
-      - "./src/phppr:/var/www/html/wp-content/themes/phppr"
+      - "./src/themes:/var/www/html/wp-content/themes"
     links:
       - mysqldb:mysqldb
     environment:
       PHP_SITE_NAME: dev
 
   mysqldb:
-    image: wodby/wordpress-mariadb
+    image: mysql/mysql-server
     container_name: phppr_mysqldb
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: 1
@@ -22,7 +22,7 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
     volumes:
-      - ./docker-runtime/mariadb:/var/lib/mysql
+      - ./docker-runtime/mysql:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -35,6 +35,6 @@ services:
       PHP_MAX_INPUT_VARS: 1G
     restart: always
     ports:
-     - 8001:80
+      - 8001:80
     volumes:
-     - /sessions
+      - ./docker-runtime/sessions:/sessions
