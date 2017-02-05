@@ -2,8 +2,8 @@
 
 Para contribuir com o desenvolvimento do site existem duas formas.
 
-* Criando Issue (https://github.com/php-pr/phppr.net/issues)
-* Pull Request
+* [Criando Issue](https://github.com/php-pr/site/issues/new)
+* [Pull Request](https://github.com/php-pr/site/compare)
 
 ## Issue ##
 
