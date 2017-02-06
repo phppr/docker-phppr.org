@@ -1,112 +1,118 @@
 <?php get_header(); ?>
 
-    <div class="row">
-        <div class="container">
-            <div class="col-md-8 col-xs-12">
-                <div class="row">
-                    <div id="destaque" class="col-md-12 col-sm-12 colxs-12">
-                        <div class="col-md-6 col-xs-6">
-                            <a href="#" class="thumbnail">
-                                <img alt="" src="<?php echo get_template_directory_uri(); ?>/assets/img/php-conference-brasil.jpg">
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-xs-6">
-                            <h2>PHP Conference 2016</h2>
-                            <p>Em 2016, a PHP Conference Brasil terá espaço para você acampar: O PHP Camping Esta iniciativa já foi um sucesso em 2015 e por isso estamos repetindo neste ano. Dias para acampar: 7, 8, 9 e 10 de Dezembro (entrada a partir de
-                                quarta-feira, às 12h00, e saída no sábado, às 17h00).</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="artigo" class="row">
-                    <div class="container">
-                        <h2>Últimos Artigos</h2>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/silex.jpg" alt="...">
-                            <div class="caption">
-                                <h4>Gerando notificações push com pushbullet e silex</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-composer-transparent.png" alt="...">
-                            <div class="caption">
-                                <h4>Utilizando o composer: Install vs update</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/php7.png" alt="...">
-                            <div class="caption">
-                                <h4>PHP7: até 9 vezes mais rápido que o PHP 5.6</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="container">
 
-            <div id="sidebar" class="col-xs-12 col-md-4 pull-right">
-                <div class="col-md-12">
-                    <h3>Eventos</h3>
-                </div>
-                <div class="event col-md-12">
-                    <h4>
-                        <span class="span-label label label-primary">08 de Julho</span>
-                    </h4>
-                    <h5>FISL 17</h5>
-                    <p>Fórum Internacional de Software Livre<br>Porto Alegre-RS</p>
-                </div>
-                <div class="event col-md-12">
-                    <h4>
-                        <span class="span-label label label-primary">18 de Setembro</span>
-                    </h4>
-                    <h5>Alagoas Dev Day</h5>
-                    <p>Fórum Internacional de Software Livre<br>Maceió-AL</p>
-                </div>
-                <div class="event col-md-12">
-                    <h4>
-                        <span class="span-label label label-primary">15 de Maio</span>
-                    </h4>
-                    <h5>Dev Camp</h5>
-                    <p>Conf. dos desenvolvedores de Campinas.<br>Campinas-SP</p>
-                </div>
-                <br>
-                <br>
-                <div id="link-event" class="col-md-12">
-                    <a href="#">Listar mais eventos...</a>
-                </div>
+    <section class="featured">
+        <h2 class="featured__title"><a href="#">Últimos Eventos</a></h2>
+
+        <div class="card">
+            <div class="row">
+                <?php for ($i = 1; $i <= 3; $i++): ?>
+                <article class="col-md-4">
+                    <div class="article">
+                        <!--<figure class="article__thumb">
+                            <a href="#"><img src="//placehold.it/350x250" alt="" class="img-responsive"></a>
+                        </figure>-->
+                        <header class="article__heading">
+                            <h2 class="article__title">
+                                <a href="#">Article title Aliqua cillum non velit in dolore cillum non sit voluptate cillum aute.</a>
+                            </h2>
+                            <div class="article__meta">
+                                <span itemscope="" itemprop="author" itemtype="http://schema.org/Person" class="article__author">
+                                    <span itemprop="name" class="article__author author vcard">
+                                        Author: <a itemprop="url" class="url fn n" href="/?author=1" rel="author">nandomoreira.me </a>
+                                    </span>
+                                </span> |
+                                <a href="/?p=19#respond" class="post-comments">3 Comentários</a>
+                            </div>
+                        </header>
+                        <div class="article__content">
+                            <p>Nisi dolor ad culpa amet fugiat culpa. Excepteur pariatur sunt aute elit in aute. Nulla adipisicing tempor Lorem...
+                            <a href="#">[Continue lendo]</a></p>
+                        </div>
+                    </div>
+                </article>
+                <?php endfor; ?>
             </div>
+            <a href="#" class="card__view-all">Ver todos</a>
         </div>
-    </div>
+    </section>
 
-    <section class="conteudo">
-        <div class="container">
-            <div class="col-md-12 col-xs-4">
-                <h4 class="titulo-org">Parceiros:</h4>
-                <div class="row">
-                    <ul class="logos-org">
-                        <li>
-                            <a target="_blank" href="#">
-                                <img alt="ABRAPHP" class="col-md-2" src="<?php echo get_template_directory_uri(); ?>/assets/img/abraphp.png">
+    <section class="featured">
+        <h2 class="featured__title"><a href="#">Artigos da comunidade</a></h2>
+
+        <div class="card">
+            <div class="row">
+                <?php for ($i = 1; $i <= 6; $i++): ?>
+                <article class="col-md-4">
+                    <div class="article">
+                        <figure class="article__thumb">
+                            <a href="#">
+                                <!--<img src="//placehold.it/350x250" alt="" class="img-responsive">-->
+                                <!--<img src="//lorempixel.com/350/250/technics" alt="300" class="img-responsive">-->
                             </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="#">
-                                <img alt="Loja PHP" class="col-md-2" src="<?php echo get_template_directory_uri(); ?>/assets/img/lojaphp.png">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/casadocodigo.png" class="col-md-2" alt="Casa do Código">
-                            </a>
-                        </li>
-                    </ul>
+                        </figure>
+                        <header class="article__heading">
+                            <h2 class="article__title">
+                                <a href="#">Article title Aliqua cillum non velit in dolore cillum non sit voluptate cillum aute.</a>
+                            </h2>
+                            <div class="article__meta">
+                                <span itemscope="" itemprop="author" itemtype="http://schema.org/Person" class="article__author">
+                                    <span itemprop="name" class="article__author author vcard">
+                                        Author: <a itemprop="url" class="url fn n" href="/?author=1" rel="author">nandomoreira.me </a>
+                                    </span>
+                                </span> |
+                                <a href="/?p=19#respond" class="post-comments">3 Comentários</a>
+                            </div>
+                        </header>
+                        <div class="article__content">
+                            <p>Nisi dolor ad culpa amet fugiat culpa. Excepteur pariatur sunt aute elit in aute. Nulla adipisicing tempor Lorem...
+                            <a href="#">[Continue lendo]</a></p>
+                        </div>
+                    </div>
+                </article>
+                <?php endfor; ?>
+            </div>
+            <a href="#" class="card__view-all">Ver todos</a>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="featured__title"><a href="#" target="_blank">Avisos</a></h2>
+
+                <div class="card">
+                    <?php for ($i = 1; $i <= 2; $i++): ?>
+                        <article class="article">
+                            <header class="article__heading">
+                                <h2 class="article__title">
+                                    <a href="#">Article title Aliqua cillum non velit in dolore cillum non sit voluptate cillum aute.</a>
+                                </h2>
+                                <div class="article__meta">
+                                    <span itemscope="" itemprop="author" itemtype="http://schema.org/Person" class="article__author">
+                                        <span itemprop="name" class="article__author author vcard">
+                                            Author: <a itemprop="url" class="url fn n" href="/?author=1" rel="author">nandomoreira.me </a>
+                                        </span>
+                                    </span> |
+                                    <a href="/?p=19#respond" class="post-comments">3 Comentários</a>
+                                </div>
+                            </header>
+                        </article>
+                    <?php endfor; ?>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2 class="featured__title"><a href="https://twitter.com/search?q=%23phppr&ref_src=twsrc%5Etfw" target="_blank">#HashTag</a></h2>
+
+                <div class="card">
+                    <a class="twitter-timeline"  href="https://twitter.com/hashtag/phppr" data-widget-id="828410097332281344">phppr Tweets</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                 </div>
             </div>
         </div>
     </section>
+
+</div>
 
 <?php get_footer(); ?>

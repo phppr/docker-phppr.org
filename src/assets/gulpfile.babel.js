@@ -9,9 +9,11 @@ const isProduction = $.util.env.type === 'production' ? true : false;
 const browsers = ['last 2 versions'];
 const config = {
   src: './',
+  sass: './sass',
+  components: './components',
   css: '../themes/phppr/assets/css',
   js: '../themes/phppr/assets/js',
-  images: '../themes/phppr/assets/img',
+  images: '../themes/phppr/assets/images',
   fonts: '../themes/phppr/assets/fonts',
   plumberErrorHandler: {
     errorHandler: $.notify.onError({
@@ -21,14 +23,14 @@ const config = {
   }
 };
 
-Gulp.task('stylesheets', () => Gulp.src([`${config.src}/sass/*.sass`])
+Gulp.task('stylesheets', () => Gulp.src([`${config.sass}/*.sass`])
   .pipe($.plumber(config.plumberErrorHandler))
   .pipe($.sass({
     sourceComments: isProduction ? false : 'normal',
     includePaths: [
       Bourbon.includePaths,
-      `${config.src}/components`,
-      `${config.src}/sass`
+      `${config.components}`,
+      `${config.sass}`
     ]
   }))
   .pipe($.autoprefixer({ browsers }))
@@ -45,7 +47,7 @@ Gulp.task('scripts', () => Gulp.src([`${config.src}/javascripts/*.js`])
     extensions: 'js',
     includePaths: [
       'node_modules',
-      `${config.src}/components`,
+      `${config.components}`,
       `${config.src}/javascripts`
     ]
   }))
@@ -61,16 +63,14 @@ Gulp.task('images', () => Gulp.src(`${config.src}/images/**/*`)
   .pipe($.size({ title: 'Compress image', gzip: false, showFiles: true }))
   .pipe(Gulp.dest(config.images)));
 
-Gulp.task('fonts', () => Gulp.src([
-    `${config.src}/components/font-awesome/fonts/*`,
-    `${config.src}/components/bootstrap-sass/assets/fonts/**/*`,
-  ])
+Gulp.task('fonts', () => Gulp.src(`${config.components}/font-awesome/fonts/*`)
+  .pipe($.size({ title: 'Font Awesome!', gzip: false, showFiles: true }))
   .pipe(Gulp.dest(config.fonts)));
 
 Gulp.task('build', [ 'stylesheets', 'scripts', 'images', 'fonts' ]);
 
 Gulp.task('watch', ['build'], () => {
-  Gulp.watch(`${config.src}/sass/**/*`, ['stylesheets']);
+  Gulp.watch(`${config.sass}/**/*`, ['stylesheets']);
   Gulp.watch(`${config.src}/javascripts/**/*`, ['scripts']);
 });
 

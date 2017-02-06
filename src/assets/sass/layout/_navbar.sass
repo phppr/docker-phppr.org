@@ -1,0 +1,33 @@
+.navbar.navbar-inverse
+  border-radius: 0
+  margin: 0
+
+  .nav.navbar-nav
+    > li
+      position: relative
+
+      &.to-home > a
+        padding-left: 0
+
+      &:not(:last-child):after
+        content: ''
+        width: 1px
+        height: 25px
+        background-color: #fff
+        position: absolute
+        right: 0
+        top: 12px
+        opacity: .3
+
+.dropdown
+  .caret
+    transition: .2s transform ease-in-out
+
+  &.open .caret
+    transform: rotate(180deg)
+
+.dropdown-menu
+  min-width: 100%
+
+  > li > a
+    padding: 7px 15px
