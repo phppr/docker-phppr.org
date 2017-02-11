@@ -52,6 +52,11 @@ function phppr_theme_settings() {
                         'type'  => 'text'
                     ),
                     array(
+                        'id'    => 'phppr_slack',
+                        'label' => __( 'Slack:', 'odin' ),
+                        'type'  => 'text'
+                    ),
+                    array(
                         'id'    => 'phppr_facebook',
                         'label' => __( 'Facebook:', 'odin' ),
                         'type'  => 'text'

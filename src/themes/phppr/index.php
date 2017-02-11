@@ -122,8 +122,9 @@
 
                     <?php if($github_username): ?>
                         <span>
+                            <i class="icon icon-github"></i>
                             <a href="https://github.com/<?php echo $github_username ?>" target="_blank">
-                                <i class="icon icon-github"></i>/<?php echo $github_username ?>
+                                /<?php echo $github_username ?>
                             </a>
                         </span>
                     <?php endif; ?>

@@ -14,13 +14,18 @@
             <div class="container">
                 <div class="row">
                     <div class="logo col-md-3">
-                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png"></a>
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Imagem Logo de <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+                        </a>
                     </div>
 
                     <div class="header-search-form col-md-7">
-                        <form action="/" method="get">
+                        <form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
                             <div class="input-group input-group-lg">
-                                <input type="text" class="form-control" name="s" placeholder="Encontrar Artigos, Eventos e Jobs..." required>
+                                <label for="navbar-search" class="sr-only">
+                                    <?php _e( 'Search:', 'odin' ); ?>
+                                </label>
+                                <input type="search" class="form-control" name="s" value="<?php echo get_search_query(); ?>" placeholder="Encontrar Artigos, Eventos e Jobs..." required>
                                 <span class="input-group-btn">
                                     <button type="submit" class="btn btn-default"><i class="icon icon-search"></i></button>
                                 </span>
@@ -28,12 +33,23 @@
                         </form>
                     </div>
 
+                    <?php
+                        $phppr_social = get_option( 'phppr_social' );
+                        $social = array(
+                            'github' => $phppr_social['phppr_github'],
+                            'slack' => $phppr_social['phppr_slack'],
+                            'twitter' => $phppr_social['phppr_twitter'],
+                            'facebook' => $phppr_social['phppr_facebook'],
+                        );
+                    ?>
+
                     <div class="header-social col-md-2">
                         <ul class="list-inline pull-right">
-                            <li class="header-social__github"><a href="https://github.com/phppr" target="_blank"><i class="icon icon-github"></i></a></li>
-                            <li class="header-social__slack"><a href="http://phppr.herokuapp.com/" target="_blank"><i class="icon icon-slack"></i></a></li>
-                            <li class="header-social__twitter"><a href="https://twitter.com/phppr" target="_blank"><i class="icon icon-twitter"></i></a></li>
-                            <li class="header-social__facebook"><a href="https://www.facebook.com/groups/1398320767076609/" target="_blank"><i class="icon icon-facebook"></i></a></li>
+                            <?php foreach($social as $k => $s): ?>
+                                <li class="header-social__<?php echo $k ?>">
+                                    <a href="<?php echo $s ?>" target="_blank"><i class="icon icon-<?php echo $k ?>"></i></a>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
                 </div>
@@ -52,22 +68,19 @@
                         </button>
                     </div>
 
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li class="to-home"><a href="#">Home</a></li>
-                            <li><a href="#">PHP Eventos</a></li>
-                            <li><a href="#">PHP Artigos</a></li>
-                            <li><a href="#">PHP Empregos</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    Sobre a Comunidade <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Sobre a PHP PR</a></li>
-                                    <li><a href="#">Como participar</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <nav class="collapse navbar-collapse" role="navigation">
+                        <?php
+                            wp_nav_menu(
+                                array(
+                                    'theme_location' => 'main-menu',
+                                    'depth' => 2,
+                                    'container' => false,
+                                    'menu_class' => 'nav navbar-nav',
+                                    'fallback_cb' => 'Odin_Bootstrap_Nav_Walker::fallback',
+                                    'walker' => new Odin_Bootstrap_Nav_Walker()
+                                )
+                            );
+                        ?>
                         <ul class="nav navbar-nav navbar-right">
                             <?php if (is_user_logged_in()): ?>
 
@@ -88,19 +101,19 @@
                                 </li>
                             <?php else: ?>
                                 <li>
-                                    <a href="<?php echo site_url('/wp-admin/admin-ajax.php?action=github_oauth_redirect'); ?>">Quero participar</a>
+                                    <a href="<?php echo site_url('/wp-admin/admin-ajax.php?action=github_oauth_redirect'); ?>">
+                                        <i class="icon icon-github"></i> Login com Github
+                                    </a>
                                 </li>
                             <?php endif; ?>
                         </ul>
-                    </div>
+                    </nav>
                 </div>
             </div>
         </nav>
 
         <div class="breadcrumbs">
-            <ol class="breadcrumb container">
-                <li><a href="#"><i class="icon icon-home"></i></a></li>
-                <li><a href="#">Library</a></li>
-                <li class="active">Data</li>
-            </ol>
+            <div class="container">
+                <?php echo odin_breadcrumbs( '<i class="icon icon-home"></i>' ) ?>
+            </div>
         </div>
