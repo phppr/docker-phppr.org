@@ -27,7 +27,7 @@ require_once get_template_directory() . '/core/classes/class-bootstrap-nav.php';
 require_once get_template_directory() . '/core/classes/class-shortcodes.php';
 //require_once get_template_directory() . '/core/classes/class-shortcodes-menu.php';
 require_once get_template_directory() . '/core/classes/class-thumbnail-resizer.php';
-// require_once get_template_directory() . '/core/classes/class-theme-options.php';
+require_once get_template_directory() . '/core/classes/class-theme-options.php';
 // require_once get_template_directory() . '/core/classes/class-options-helper.php';
 // require_once get_template_directory() . '/core/classes/class-post-type.php';
 // require_once get_template_directory() . '/core/classes/class-taxonomy.php';
@@ -35,7 +35,7 @@ require_once get_template_directory() . '/core/classes/class-thumbnail-resizer.p
 // require_once get_template_directory() . '/core/classes/abstracts/abstract-front-end-form.php';
 // require_once get_template_directory() . '/core/classes/class-contact-form.php';
 // require_once get_template_directory() . '/core/classes/class-post-form.php';
-// require_once get_template_directory() . '/core/classes/class-user-meta.php';
+require_once get_template_directory() . '/core/classes/class-user-meta.php';
 // require_once get_template_directory() . '/core/classes/class-post-status.php';
 //require_once get_template_directory() . '/core/classes/class-term-meta.php';
 
@@ -251,9 +251,10 @@ add_action( 'wp_enqueue_scripts', 'odin_enqueue_scripts', 1 );
  */
 function odin_stylesheet_uri( $uri, $dir ) {
     if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-	    return $dir . '/assets/css/style.css';
+        $v = md5('phppr' . time());
+	    return "{$dir}/assets/css/style.css?v={$v}";
     } else {
-	    return $dir . '/assets/css/style.min.css';
+	    return "{$dir}/assets/css/style.min.css";
     }
 }
 
@@ -306,3 +307,8 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/functions.php';
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
 }
+
+require_once get_template_directory() . '/core/theme_settings.php';
+
+require_once get_template_directory() . '/core/users.php';
+require_once get_template_directory() . '/core/github.php';

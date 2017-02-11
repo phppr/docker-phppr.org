@@ -1,0 +1,57 @@
+.section
+  &__title
+    text-transform: uppercase
+    font-size: 4em
+    position: relative
+    letter-spacing: -.04em
+    z-index: 1
+    top: 32px
+
+    a
+      opacity: .4
+      color: $blue
+      // color: $dark-gray
+
+      &:focus,
+      &:active,
+      &:hover
+        text-decoration: none
+        color: $blue
+        opacity: .9
+
+  &__subtitle
+    font-size: 2em
+    opacity: .75
+    width: 75%
+    margin: 0 auto $small-spacing
+
+  &--featured
+    margin-top: $base-spacing
+    padding-top: $base-spacing
+    padding-bottom: $base-spacing
+
+    .section__title
+      text-align: center
+      top: 0
+
+  &--bg
+    padding-top: ($base-spacing * 4)
+    padding-bottom: ($base-spacing * 4)
+    background: url('../images/elephants-image.jpg') no-repeat bottom center
+    background-size: cover
+
+    .section__subtitle
+      color: #fff
+      margin-bottom: $large-spacing
+
+  .card
+    position: relative
+    z-index: 2
+
+.sp
+  padding-top: $small-spacing
+  padding-bottom: $small-spacing
+  width: 100%
+  height: 1px
+
+  +clearfix
