@@ -4,6 +4,7 @@
   "description": "Portal do Grupo de Desenvolvedores PHP do Paraná",
   "main": "gulpfile.js",
   "scripts": {
+    "build": "gulp build",
     "start": "gulp watch"
   },
   "repository": {
