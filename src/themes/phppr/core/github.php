@@ -5,6 +5,7 @@ session_start();
 define( 'AUTORIZE_URL', 'https://github.com/login/oauth/authorize' );
 define( 'TOKEN_URL', 'https://github.com/login/oauth/access_token' );
 define( 'API_URL_BASE', 'https://api.github.com/' );
+define( 'AJAX_REDIRECT_URL', get_site_url() . '/wp-admin/admin-ajax.php?action=github_oauth_callback' );
 
 function update_github_option_keys() {
     $phppr_github_tokens = get_option( 'phppr_github_tokens' );
@@ -91,7 +92,7 @@ function github_oauth_redirect() {
 	unset($_SESSION['access_token']);
 	$params = array(
     	'client_id' => OAUTH2_CLIENT_ID,
-    	'redirect_uri' => get_site_url() . '/wp-admin/admin-ajax.php?action=github_oauth_callback',
+    	'redirect_uri' => AJAX_REDIRECT_URL,
     	'scope' => 'user',
     	'state' => $_SESSION['state']
   	);
@@ -140,7 +141,7 @@ function github_oauth_callback() {
   	$token = apiRequest(TOKEN_URL, array(
 	    'client_id' => OAUTH2_CLIENT_ID,
 	    'client_secret' => OAUTH2_CLIENT_SECRET,
-	    'redirect_uri' => get_site_url() . '/wp-admin/admin-ajax.php?action=github_oauth_callback',
+	    'redirect_uri' => AJAX_REDIRECT_URL,
 	    'state' => $_SESSION['state'],
 	    'code' => get('code')
   	));

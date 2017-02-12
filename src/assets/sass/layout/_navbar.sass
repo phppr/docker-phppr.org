@@ -1,4 +1,6 @@
 .navbar.navbar-inverse
+  position: relative
+  z-index: 50
   border-radius: 0
   margin: 0
 
@@ -18,6 +20,17 @@
         right: 0
         top: 12px
         opacity: .3
+
+    .nav-item
+      &--iframe
+        padding-left: 15px
+        padding-right: 15px
+
+        iframe
+          display: inline-block
+          vertical-align: middle
+          padding: 15px 0
+          height: 50px !important
 
 .dropdown
   .caret

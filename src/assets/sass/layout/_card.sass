@@ -16,3 +16,14 @@
     text-transform: uppercase
     font-size: .8em
     width: 100%
+
+  &--notifications
+    height: 400px
+    overflow-y: auto
+
+a[target="_blank"]
+  &:after
+    +fa-icon()
+    content: $fa-var-external-link
+    font-size: .8rem
+    margin-left: 5px

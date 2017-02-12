@@ -70,9 +70,9 @@
 <section class="section container">
     <div class="row">
         <div class="col-md-6">
-            <h2 class="section__title"><a href="#" target="_blank">Avisos</a></h2>
+            <h2 class="section__title"><a href="#">Avisos</a></h2>
 
-            <div class="card">
+            <div class="card card--notifications">
                 <?php for ($i = 1; $i <= 3; $i++): ?>
                     <article class="article">
                         <header class="article__heading">
@@ -93,12 +93,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <h2 class="section__title"><a href="https://twitter.com/search?q=%23phppr&ref_src=twsrc%5Etfw" target="_blank">#HashTag</a></h2>
-
-            <div class="card">
-                <a class="twitter-timeline"  href="https://twitter.com/hashtag/phppr" data-widget-id="829118890106093569">phppr Tweets</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-            </div>
+            <?php get_template_part( 'inc/twitter-iframe' ) ?>
         </div>
     </div>
 </section>

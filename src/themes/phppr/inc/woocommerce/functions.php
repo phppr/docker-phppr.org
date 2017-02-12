@@ -14,7 +14,7 @@ if ( ! function_exists( 'odin_before_content' ) ) {
 	 */
 	function odin_before_content() {
 		?>
-		<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
+		<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" role="main">
 		<?php
 	}
 }

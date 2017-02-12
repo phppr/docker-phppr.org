@@ -1,16 +1,16 @@
 .section
   &__title
     text-transform: uppercase
-    font-size: 4em
+    font-size: 3em
     position: relative
-    letter-spacing: -.04em
+    letter-spacing: -.03em
+    color: rgba($dark-gray, .9)
     z-index: 1
-    top: 32px
+    top: 25px
 
     a
       opacity: .4
       color: $blue
-      // color: $dark-gray
 
       &:focus,
       &:active,
@@ -49,9 +49,7 @@
     z-index: 2
 
 .sp
-  padding-top: $small-spacing
-  padding-bottom: $small-spacing
   width: 100%
-  height: 1px
+  height: $small-spacing
 
   +clearfix
