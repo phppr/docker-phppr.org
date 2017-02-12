@@ -4,7 +4,7 @@ session_start();
 
 define( 'AUTORIZE_URL', 'https://github.com/login/oauth/authorize' );
 define( 'TOKEN_URL', 'https://github.com/login/oauth/access_token' );
-define( 'API_URL_BASE', 'https://api.github.com/' );
+define( 'API_URL_BASE', 'https://api.github.com' );
 define( 'AJAX_REDIRECT_URL', get_site_url() . '/wp-admin/admin-ajax.php?action=github_oauth_callback' );
 
 function update_github_option_keys() {
@@ -98,8 +98,7 @@ function github_oauth_redirect() {
   	);
 
   	header('Location: ' . AUTORIZE_URL . '?' . http_build_query($params));
-
-	die();
+	die;
 }
 
 add_action("wp_ajax_github_oauth_redirect", "github_oauth_redirect");
@@ -134,7 +133,7 @@ function github_oauth_callback() {
 	if(get('code')) {
   		if(!get('state') || $_SESSION['state'] != get('state')) {
     		header('Location: ' . $_SERVER['PHP_SELF']);
-    		die();
+    		die;
   		}
   	}
 
@@ -149,7 +148,7 @@ function github_oauth_callback() {
  	$_SESSION['access_token'] = $token->access_token;
 
     if(session('access_token')) {
-        $user = apiRequest(API_URL_BASE . 'user');
+        $user = apiRequest(API_URL_BASE . '/user');
         $github_username = $user->login;
 
         if(username_exists($github_username)) {
@@ -168,7 +167,7 @@ function github_oauth_callback() {
     } else {
         header('Location: ' . get_site_url());
     }
-    die();
+    die;
 }
 
 add_action("wp_ajax_github_oauth_callback", "github_oauth_callback");

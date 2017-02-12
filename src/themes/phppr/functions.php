@@ -29,9 +29,9 @@ require_once get_template_directory() . '/core/classes/class-shortcodes.php';
 require_once get_template_directory() . '/core/classes/class-thumbnail-resizer.php';
 require_once get_template_directory() . '/core/classes/class-theme-options.php';
 // require_once get_template_directory() . '/core/classes/class-options-helper.php';
-// require_once get_template_directory() . '/core/classes/class-post-type.php';
-// require_once get_template_directory() . '/core/classes/class-taxonomy.php';
-// require_once get_template_directory() . '/core/classes/class-metabox.php';
+require_once get_template_directory() . '/core/classes/class-post-type.php';
+require_once get_template_directory() . '/core/classes/class-taxonomy.php';
+require_once get_template_directory() . '/core/classes/class-metabox.php';
 // require_once get_template_directory() . '/core/classes/abstracts/abstract-front-end-form.php';
 // require_once get_template_directory() . '/core/classes/class-contact-form.php';
 // require_once get_template_directory() . '/core/classes/class-post-form.php';
@@ -261,19 +261,6 @@ function odin_stylesheet_uri( $uri, $dir ) {
 add_filter( 'stylesheet_uri', 'odin_stylesheet_uri', 10, 2 );
 
 /**
- * Query WooCommerce activation
- *
- * @since  2.2.6
- *
- * @return boolean
- */
-if ( ! function_exists( 'is_woocommerce_activated' ) ) {
-	function is_woocommerce_activated() {
-		return class_exists( 'woocommerce' ) ? true : false;
-	}
-}
-
-/**
  * Core Helpers.
  */
 require_once get_template_directory() . '/core/helpers.php';
@@ -298,17 +285,9 @@ require_once get_template_directory() . '/inc/optimize.php';
  */
 require_once get_template_directory() . '/inc/template-tags.php';
 
-/**
- * WooCommerce compatibility files.
- */
-if ( is_woocommerce_activated() ) {
-	add_theme_support( 'woocommerce' );
-	require get_template_directory() . '/inc/woocommerce/hooks.php';
-	require get_template_directory() . '/inc/woocommerce/functions.php';
-	require get_template_directory() . '/inc/woocommerce/template-tags.php';
-}
-
 require_once get_template_directory() . '/core/theme_settings.php';
 
 require_once get_template_directory() . '/core/users.php';
 require_once get_template_directory() . '/core/github.php';
+require_once get_template_directory() . '/core/events.php';
+require_once get_template_directory() . '/core/notifications.php';

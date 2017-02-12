@@ -13,7 +13,7 @@
 	<header class="entry-header article__heading">
 		<?php
 			if ( is_single() ) :
-				the_title( '<h1 class="entry-title article__title">', '</h1>' );
+				the_title( '<h1 class="entry-title section__title">', '</h1>' );
 			else :
 				the_title( '<h2 class="entry-title article__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			endif;
@@ -31,17 +31,31 @@
 			<?php the_excerpt(); ?>
 		</div>
 	<?php else : ?>
-		<div class="entry-content article__content">
-			<?php
-				the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'odin' ) );
-				wp_link_pages( array(
-					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'odin' ) . '</span>',
-					'after'       => '</div>',
-					'link_before' => '<span>',
-					'link_after'  => '</span>',
-				) );
-			?>
-		</div><!-- .entry-content -->
+	    <?php if ( is_single() ) : ?>
+            <div class="entry-content article__content card">
+                <?php
+                    the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'odin' ) );
+                    wp_link_pages( array(
+                        'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'odin' ) . '</span>',
+                        'after'       => '</div>',
+                        'link_before' => '<span>',
+                        'link_after'  => '</span>',
+                    ) );
+                ?>
+            </div><!-- .entry-content -->
+	    <?php else: ?>
+            <div class="entry-content article__content">
+                <?php
+                    the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'odin' ) );
+                    wp_link_pages( array(
+                        'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'odin' ) . '</span>',
+                        'after'       => '</div>',
+                        'link_before' => '<span>',
+                        'link_after'  => '</span>',
+                    ) );
+                ?>
+            </div><!-- .entry-content -->
+	    <?php endif; ?>
 	<?php endif; ?>
 
 	<footer class="entry-meta">
