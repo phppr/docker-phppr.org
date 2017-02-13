@@ -57,7 +57,7 @@
             <div class="container">
                 <div class="row">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-main-navigation" aria-expanded="false">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -65,7 +65,7 @@
                         </button>
                     </div>
 
-                    <nav class="collapse navbar-collapse" role="navigation">
+                    <nav class="collapse navbar-collapse navbar-main-navigation" role="navigation">
                         <?php
                             wp_nav_menu(
                                 array(

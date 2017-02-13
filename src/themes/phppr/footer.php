@@ -8,5 +8,6 @@
         </footer>
 
         <?php wp_footer(); ?>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5869919cdfa51391"></script>
     </body>
 </html>

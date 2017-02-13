@@ -4,6 +4,13 @@
   padding: $small-spacing 0
   +clearfix
 
+  .logo
+    +media(max-width $container-desktop)
+      padding: $small-spacing 0
+      display: block
+      width: 100%
+      text-align: center
+
 .header-search-form
   padding-top: 15px
 
@@ -18,6 +25,16 @@
     &:focus,
     &:active
       transform: rotate(12deg) scale(1.2)
+
+  +media(max-width $container-desktop)
+    ul
+      float: none !important
+      width: 100%
+      padding: 0
+      text-align: center
+
+      li
+        display: inline-block
 
   a[target="_blank"]:after
     content: '' !important

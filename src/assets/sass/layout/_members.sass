@@ -5,11 +5,14 @@
   &__item
     font-size: .8em
     text-align: center
-    width: percentage(1/6)
-    height: 210px
+    min-height: 210px
+    width: 45%
     vertical-align: top
     display: inline-block
     padding: 0 $small-spacing
+
+    +media($container-desktop)
+      width: percentage(1/6)
 
     img
       max-height: 150px
