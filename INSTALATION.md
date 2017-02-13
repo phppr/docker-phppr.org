@@ -30,7 +30,7 @@ Agora acesse: [localhost](http://localhost/) e faça sua instalação do WP.
 Com o Nodejs, Bower e Gulpjs instalados em sua máquina execute a seguinte sequência de comandos:
 
 ```
-cd src/phppr/assets/src/
+cd src/assets/
 npm install
 bower install
 ```
@@ -42,10 +42,18 @@ Para apenas fazer o build dos arquivos execute:
 ```
 gulp build
 ```
+ou
+```
+npm run build
+```
 
 Agora se você quiser trabalhar no front-end constantemente use o watch:
 
 ```
 gulp watch
+```
+ou
+```
+npm start
 ```
 
