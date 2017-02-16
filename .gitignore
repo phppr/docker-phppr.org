@@ -50,3 +50,5 @@ src/themes/phppr/assets
 .yarn-integrity
 
 docker-runtime
+src/plugins/
+!src/plugins/index.php
