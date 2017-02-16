@@ -22,7 +22,7 @@
                     <div class="header-search-form col-md-7">
                         <form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
                             <div class="input-group input-group-lg">
-                                <input type="search" class="form-control" name="s" value="<?php echo get_search_query(); ?>" placeholder="Encontrar Artigos, Eventos e Jobs..." required>
+                                <input type="search" class="form-control" name="s" value="<?php echo get_search_query(); ?>" placeholder="Procurar na phppr.org" required>
                                 <span class="input-group-btn">
                                     <button type="submit" class="btn btn-default"><i class="icon icon-search"></i></button>
                                 </span>

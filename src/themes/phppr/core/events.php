@@ -41,10 +41,10 @@ function events_metabox() {
             array(
                 'id' => 'event_date',
                 'label' => __( 'Data do evento', 'odin' ),
-                'type' => 'text',
+                'type' => 'input',
                 'add_column'  => true,
                 'attributes' => array(
-                    'placeholder' => __( 'ex: Sábado, 01 de Fevereiro de 2020' )
+                    'type' => 'date'
                 )
             ),
             array(
@@ -83,6 +83,14 @@ function events_metabox() {
             // )
         )
     );
+
+    if(isset($_POST["event_date"])) {
+        $postId = $_POST['post_ID'];
+        $event_as_timestamp = strtotime($_POST["event_date"]);
+
+        add_post_meta($postId, "event_timestamp_date" );
+        update_post_meta($postId, "event_timestamp_date", $event_as_timestamp );
+    }
 }
 
 add_action( 'init', 'events_metabox', 1 );

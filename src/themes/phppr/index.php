@@ -1,47 +1,68 @@
 <?php get_header(); ?>
 
 <section class="section container">
-    <h2 class="section__title section__title--cast"><a href="#">Últimos Eventos</a></h2>
+    <h2 class="section__title section__title--cast">
+        <a href="#">Próximos Eventos</a>
+    </h2>
 
     <div class="card">
         <div class="row">
             <?php
-                $args = array( 'post_type' => 'events', 'posts_per_page' => 4 );
-                $loop = new WP_Query( $args );
+                $args = array(
+                    'post_type' => 'events',
+                    'posts_per_page' => 3,
+                    'meta_key' => 'event_timestamp_date',
+                    'orderby' => 'meta_value',
+                    'order' => 'ASC'
+                );
+                $events = new WP_Query( $args );
             ?>
-            <?php if( $loop->have_posts() ): ?>
-                <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+            <?php if( $events->have_posts() ): ?>
+                <?php while ( $events->have_posts() ) : $events->the_post(); ?>
                     <?php
                         $date = get_post_meta( $post->ID, 'event_date', true );
                         $hour = get_post_meta( $post->ID, 'event_hours', true );
                         $location = get_post_meta( $post->ID, 'event_location', true );
                         // $description = get_post_meta( $post->ID, 'event_description', true );
-                    ?>
-                    <article class="col-md-4">
-                        <div class="article">
-                            <header class="article__heading">
-                                <h2 class="article__title">
-                                    <a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><?php the_title() ?></a>
-                                </h2>
-                                <div class="article__meta">
-                                    <span><?php if($date) { echo $date; } ?></span>
-                                    <span><?php if($date && $hour) { echo '|'; } ?></span>
-                                    <span><?php if($hour) { echo $hour; } ?></span>
-                                    <span><?php if($location) { echo '|'; } ?></span>
-                                    <span><?php if($location) { echo $location; } ?></span>
+
+                        $timestamp_date = get_post_meta( $post->ID, 'event_timestamp_date', true );
+                        $timestamp_now = strtotime(date('Y-m-d'));
+
+                        // $isRealized = ($timestamp_now >= $timestamp_date) ? true : false;
+                        if($timestamp_date >= $timestamp_now):
+                        ?>
+                        <article class="col-md-4">
+                            <div class="article">
+                                <header class="article__heading">
+                                    <h2 class="article__title">
+                                        <a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><?php the_title() ?></a>
+                                    </h2>
+                                    <div class="article__meta">
+                                        <span><?php if($date) {
+                                            echo "<i class='icon icon-calendar'></i> " . date("d/m/Y", strtotime($date));
+                                        } ?></span>
+                                        <span><?php if($date && $hour) { echo '|'; } ?></span>
+                                        <span><?php if($hour) {
+                                            echo "<i class='icon icon-clock-o'></i> " . $hour;
+                                        } ?></span>
+                                        <span><?php if($location) { echo '|'; } ?></span>
+                                        <span><?php if($location) {
+                                            echo  "<a href='http://maps.google.com/?q={$location}' target='_blank'><i class='icon icon-map-marker'></i> {$location}</a>";
+                                        } ?></span>
+                                    </div>
+                                </header>
+                                <?php /*
+                                <div class="article__content">
+                                    <p>
+                                        <a href="<?php the_permalink() ?>" title="<?php the_title() ?>">
+                                            <?php echo odin_excerpt( 'excerpt', 10 ) ?> [Continue lendo]
+                                        </a>
+                                    </p>
                                 </div>
-                            </header>
-                            <?php /*
-                            <div class="article__content">
-                                <p>
-                                    <a href="<?php the_permalink() ?>" title="<?php the_title() ?>">
-                                        <?php echo odin_excerpt( 'excerpt', 10 ) ?> [Continue lendo]
-                                    </a>
-                                </p>
+                                */ ?>
                             </div>
-                            */ ?>
-                        </div>
-                    </article>
+                        </article>
+                    <?php endif; ?>
                 <?php endwhile; ?>
             <?php else: ?>
                 <p>Nenhum evento por aqui... </p>
