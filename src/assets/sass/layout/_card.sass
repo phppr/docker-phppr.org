@@ -3,7 +3,9 @@
   background-color: #fff
   box-shadow: 0 2px 6px rgba(#000, .1)
   border-radius: $border-radius-base
-  margin: $small-spacing 0 $small-spacing
+  margin: 0 0 $base-spacing
+  position: relative
+  z-index: 2
 
   +clearfix
 
@@ -16,10 +18,6 @@
     text-transform: uppercase
     font-size: .8em
     width: 100%
-
-  &--notifications
-    height: 469px
-    overflow-y: auto
 
 a[target="_blank"]
   &:after

@@ -226,9 +226,10 @@ function odin_enqueue_scripts() {
 
 	// General scripts.
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-        wp_enqueue_script( 'scripts-main', $template_url . '/assets/js/main.js', array(), null, true );
+        $v = md5('phppr' . time());
+        wp_enqueue_script( 'scripts-main', "{$template_url}/assets/js/main.js?v={$v}", array(), null, true );
 	} else {
-		wp_enqueue_script( 'scripts-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
+		wp_enqueue_script( 'scripts-main-min', "{$template_url}/assets/js/main.min.js", array(), null, true );
 	}
 
 	// Load Thread comments WordPress script.

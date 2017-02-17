@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <section class="section container">
-    <h2 class="section__title section__title--cast">
+    <h2 class="section__title">
         <a href="#">Próximos Eventos</a>
     </h2>
 
@@ -73,7 +73,7 @@
 </section>
 
 <section class="section container">
-    <h2 class="section__title section__title--cast"><a href="#">Artigos da comunidade</a></h2>
+    <h2 class="section__title"><a href="#">Artigos da comunidade</a></h2>
 
     <div class="card">
         <div class="row">
@@ -120,9 +120,9 @@
 <section class="section container">
     <div class="row">
         <div class="col-md-6">
-            <h2 class="section__title section__title--cast"><a href="#">Avisos</a></h2>
+            <h2 class="section__title">Avisos</h2>
 
-            <div class="card card--notifications">
+            <div class="card">
                 <?php
                     $args = array( 'post_type' => 'notifications', 'posts_per_page' => 4 );
                     $loop = new WP_Query( $args );
@@ -140,6 +140,14 @@
                 <?php else: ?>
                     <p>Nenhum aviso por aqui... </p>
                 <?php endif ?>
+            </div>
+
+            <h2 class="section__title">
+                <a href="https://github.com/phppr/vagas" target="_blank">Vagas no Paraná</a>
+            </h2>
+
+            <div class="card">
+                <ul id="phpprJobs" class="jobs"></ul>
             </div>
         </div>
         <div class="col-md-6">

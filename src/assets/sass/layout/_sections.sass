@@ -1,13 +1,15 @@
 .section
   &__title
-    text-transform: uppercase
-    font-size: 2.2em
+    font-size: 1.8em
     position: relative
     letter-spacing: -.03em
     color: rgba($dark-gray, .9)
+    text-transform: uppercase
+    margin-top: $small-spacing
+    margin-bottom: 0
 
     +media($container-desktop)
-      font-size: 3em
+      font-size: 2em
 
     a
       opacity: .4
@@ -19,13 +21,6 @@
         text-decoration: none
         color: $blue
         opacity: .9
-
-    &--cast
-      z-index: 1
-      top: 20px
-
-      +media($container-desktop)
-        top: 25px
 
   &__subtitle
     font-size: 2em
@@ -40,7 +35,7 @@
 
     .section__title
       text-align: center
-      top: 0
+      margin-bottom: $base-spacing
 
   &--bg
     padding-top: ($base-spacing * 4)
@@ -61,3 +56,7 @@
   height: $small-spacing
 
   +clearfix
+
+// body.home
+//   .section__title
+
