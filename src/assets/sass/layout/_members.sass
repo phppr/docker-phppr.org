@@ -1,0 +1,28 @@
+
+.member-list
+  text-align: center
+
+  &__item
+    font-size: .8em
+    text-align: center
+    min-height: 210px
+    width: 45%
+    vertical-align: top
+    display: inline-block
+    padding: 0 $small-spacing
+
+    +media($container-desktop)
+      width: percentage(1/6)
+
+    img
+      max-height: 150px
+
+    > a:after
+      content: ''
+
+    a
+      color: $base-font-color
+
+    span
+      margin-top: ($small-spacing / 2)
+      display: block

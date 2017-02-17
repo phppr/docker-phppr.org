@@ -1,0 +1,53 @@
+.main-header
+  border-top: 4px solid #222
+  background-color: #fff
+  padding: $small-spacing 0
+  +clearfix
+
+  .logo
+    +media(max-width $container-desktop)
+      padding: $small-spacing 0
+      display: block
+      width: 100%
+      text-align: center
+
+.header-search-form
+  padding-top: 15px
+
+.header-social
+  padding-top: 12px
+
+  li
+    font-size: 2em
+    transition: .2s transform ease-in-out
+
+    &:hover,
+    &:focus,
+    &:active
+      transform: rotate(12deg) scale(1.2)
+
+  +media(max-width $container-desktop)
+    ul
+      float: none !important
+      width: 100%
+      padding: 0
+      text-align: center
+
+      li
+        display: inline-block
+
+  a[target="_blank"]:after
+    content: '' !important
+    margin: 0
+
+  &__github a
+    color: #323131
+
+  &__facebook a
+    color: #3B5998
+
+  &__twitter a
+    color: #00B6F1
+
+  &__slack a
+    color: #EAA822

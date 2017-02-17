@@ -2,6 +2,8 @@
 
 > Portal do Grupo de Desenvolvedores PHP do Paraná.
 
+[![Stories in Ready](https://badge.waffle.io/phppr/phppr.org.svg?label=ready&title=Ready)](http://waffle.io/phppr/phppr.org)
+
 ## Contribuições ##
 
 Leia atentamente o arquivo [CONTRIBUTING.md](/CONTRIBUTING.md)
