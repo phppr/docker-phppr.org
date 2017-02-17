@@ -576,7 +576,7 @@ function odin_get_term_meta( $term_id, $field ) {
 
 function search_filter($query) {
     if ($query->is_search) {
-        $query->set('post_type', 'post');
+	    $query->set('post_type', array('post', 'events', 'notifications'));
     }
 
     return $query;
