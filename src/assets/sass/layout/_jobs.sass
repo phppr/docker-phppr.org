@@ -1,9 +1,11 @@
 .jobs
-  margin-bottom: $base-spacing
   max-height: 350px
   overflow-y: auto
+  list-style: none
+  margin: 0 0 $base-spacing
+  padding: 0
 
-  &__item
+  &__item:not(:last-child)
     padding-bottom: $small-spacing
     margin-bottom: $small-spacing
     border-bottom: $base-border

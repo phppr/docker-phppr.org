@@ -1,23 +1,21 @@
 <?php get_header(); ?>
 
-<section class="section container">
-    <h2 class="section__title">
-        <a href="#">Próximos Eventos</a>
-    </h2>
+<?php
+    $args = array(
+        'post_type' => 'events',
+        'posts_per_page' => 3,
+        'meta_key' => 'event_timestamp_date',
+        'orderby' => 'meta_value',
+        'order' => 'ASC'
+    );
+    $events = new WP_Query( $args );
+?>
+<?php if( $events->have_posts() ): ?>
+    <section class="section container">
+        <h2 class="section__title">Próximos Eventos</h2>
 
-    <div class="card">
-        <div class="row">
-            <?php
-                $args = array(
-                    'post_type' => 'events',
-                    'posts_per_page' => 3,
-                    'meta_key' => 'event_timestamp_date',
-                    'orderby' => 'meta_value',
-                    'order' => 'ASC'
-                );
-                $events = new WP_Query( $args );
-            ?>
-            <?php if( $events->have_posts() ): ?>
+        <div class="card">
+            <div class="row">
                 <?php while ( $events->have_posts() ) : $events->the_post(); ?>
                     <?php
                         $date = get_post_meta( $post->ID, 'event_date', true );
@@ -64,21 +62,21 @@
                         </article>
                     <?php endif; ?>
                 <?php endwhile; ?>
-            <?php else: ?>
-                <p>Nenhum evento por aqui... </p>
-            <?php endif ?>
+            </div>
+            <a href="#" class="card__view-all">Ver todos</a>
         </div>
-        <a href="#" class="card__view-all">Ver todos</a>
-    </div>
-</section>
+    </section>
+<?php else: ?>
+    <p>Nenhum evento por aqui... </p>
+<?php endif ?>
 
-<section class="section container">
-    <h2 class="section__title"><a href="#">Artigos da comunidade</a></h2>
+<?php $query = new WP_Query( 'posts_per_page=4' ); ?>
+<?php if ( $query->have_posts() ): ?>
+    <section class="section container">
+        <h2 class="section__title">Artigos da comunidade</h2>
 
-    <div class="card">
-        <div class="row">
-            <?php $query = new WP_Query( 'posts_per_page=4' ); ?>
-            <?php if ( $query->have_posts() ): ?>
+        <div class="card">
+            <div class="row">
                 <?php while ( $query->have_posts() ): $query->the_post(); ?>
                     <?php $image = odin_get_image_url( $post->ID, '250', '150' ); ?>
                     <article class="col-md-3">
@@ -111,30 +109,31 @@
                         </div>
                     </article>
                 <?php endwhile; ?>
-            <?php endif; ?>
+            </div>
+            <a href="#" class="card__view-all">Ver todos</a>
         </div>
-        <a href="#" class="card__view-all">Ver todos</a>
-    </div>
-</section>
+    </section>
+<?php endif; ?>
 
 <section class="section container">
     <div class="row">
         <div class="col-md-6">
             <h2 class="section__title">Avisos</h2>
 
-            <div class="card">
+            <div class="card card--notifications">
                 <?php
-                    $args = array( 'post_type' => 'notifications', 'posts_per_page' => 4 );
+                    $args = array( 'post_type' => 'notifications', 'posts_per_page' => 6 );
                     $loop = new WP_Query( $args );
                 ?>
                 <?php if( $loop->have_posts() ): ?>
                 <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                    <article class="article">
+                    <article class="article article--notifications">
                         <header class="article__heading">
                             <h2 class="article__title">
                                 <a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><?php the_title() ?></a>
                             </h2>
                         </header>
+                        <p><a href="<?php the_permalink() ?>"><?php echo odin_excerpt( 'excerpt', 10 ) ?> [Continue lendo]</a></p>
                     </article>
                 <?php endwhile; ?>
                 <?php else: ?>

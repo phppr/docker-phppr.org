@@ -225,11 +225,11 @@ function odin_enqueue_scripts() {
 	wp_enqueue_script( 'jquery' );
 
 	// General scripts.
+    $v = md5('phppr' . time());
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-        $v = md5('phppr' . time());
         wp_enqueue_script( 'scripts-main', "{$template_url}/assets/js/main.js?v={$v}", array(), null, true );
 	} else {
-		wp_enqueue_script( 'scripts-main-min', "{$template_url}/assets/js/main.min.js", array(), null, true );
+		wp_enqueue_script( 'scripts-main-min', "{$template_url}/assets/js/main.min.js?v={$v}", array(), null, true );
 	}
 
 	// Load Thread comments WordPress script.
@@ -251,11 +251,11 @@ add_action( 'wp_enqueue_scripts', 'odin_enqueue_scripts', 1 );
  * @return string      New URI.
  */
 function odin_stylesheet_uri( $uri, $dir ) {
+    $v = md5('phppr' . time());
     if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-        $v = md5('phppr' . time());
 	    return "{$dir}/assets/css/style.css?v={$v}";
     } else {
-	    return "{$dir}/assets/css/style.min.css";
+	    return "{$dir}/assets/css/style.min.css?v={$v}";
     }
 }
 
