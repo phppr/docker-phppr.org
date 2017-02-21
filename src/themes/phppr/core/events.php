@@ -19,7 +19,8 @@ function phppr_events() {
     $events->set_arguments(
         array(
             'supports' => array( 'title', 'editor', 'thumbnail' ),
-            'menu_icon' => 'dashicons-calendar'
+            'menu_icon' => 'dashicons-calendar',
+            'rewrite' => array('slug')
         )
     );
 }

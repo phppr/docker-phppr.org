@@ -1,5 +1,5 @@
 .card
-  padding: $base-spacing $base-spacing 0
+  padding: $small-spacing $small-spacing 0
   background-color: #fff
   box-shadow: 0 2px 6px rgba(#000, .1)
   border-radius: $border-radius-base
@@ -8,6 +8,9 @@
   z-index: 2
 
   +clearfix
+
+  +media($container-desktop)
+    padding: $base-spacing $base-spacing 0
 
   &__view-all
     display: block
@@ -19,9 +22,35 @@
     font-size: .8em
     width: 100%
 
+  &--twitter
+    padding-top: $small-spacing
+
+    +media($container-desktop)
+      padding-top: $small-spacing
+
+  &--notifications
+    max-height: 270px
+    overflow-y: auto
+
 a[target="_blank"]
   &:after
     +fa-icon()
     content: $fa-var-external-link
     font-size: .8rem
     margin-left: 5px
+
++media(max-width $container-tablet)
+  body.single
+    .article
+      margin-right: -($small-spacing)
+      margin-left: -($small-spacing)
+
+    .article__heading
+      text-align: center
+
+  .main-header
+    padding: 0
+    margin: 0
+
+  .github-corner
+    display: none
