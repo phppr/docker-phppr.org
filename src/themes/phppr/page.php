@@ -30,5 +30,7 @@ get_header(); ?>
             <?php get_sidebar(); ?>
         </div>
 	</main><!-- #main -->
+
+    <?php get_template_part( 'inc/section-members' ) ?>
 <?php
 get_footer();

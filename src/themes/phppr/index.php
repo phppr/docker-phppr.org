@@ -63,7 +63,7 @@
                     <?php endif; ?>
                 <?php endwhile; ?>
             </div>
-            <a href="#" class="card__view-all">Ver todos</a>
+            <a href="<?php echo esc_url( home_url( '/events' ) ); ?>" class="card__view-all">Ver todos</a>
         </div>
     </section>
 <?php else: ?>
@@ -155,64 +155,6 @@
     </div>
 </section>
 
-<section class="section section--featured">
-    <div class="container">
-        <?php $members = get_users(); ?>
-        <h2 class="section__title"><a href="#"><?php echo count($members); ?> Membros </a></h2>
-
-        <ul class="member-list list-unstyled">
-            <?php foreach($members as $member):
-                $github_username = get_user_meta( $member->ID, 'github_username', true);
-                $twitter_username = get_user_meta( $member->ID, 'twitter_username', true);
-                $github_url = get_user_meta( $member->ID, 'github_url', true);
-                $member_url = ($github_url) ? $github_url : $member->user_url;
-            ?>
-                <li class="member-list__item">
-                    <a href="<?php echo $member_url ?>" target="_blank">
-                        <img src="<?php echo get_avatar_url($member->user_email, array('size' => 140)) ?>" alt="Foto do perfil de <?php echo $member->display_name ?>" class="img-rounded">
-                    </a>
-
-                    <?php if($github_username): ?>
-                        <span>
-                            <i class="icon icon-github"></i>
-                            <a href="https://github.com/<?php echo $github_username ?>" target="_blank">
-                                /<?php echo $github_username ?>
-                            </a>
-                        </span>
-                    <?php endif; ?>
-
-                    <?php if($twitter_username): ?>
-                        <span>
-                            <i class="icon icon-twitter"></i>
-                            <a href="https://twitter.com/<?php echo $twitter_username ?>" target="_blank">
-                                @<?php echo $twitter_username ?>
-                            </a>
-                        </span>
-                    <?php endif; ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-
-        <div class="clearfix"></div>
-
-        <?php if (!is_user_logged_in()): ?>
-            <div class="col-md-12 text-center">
-                <div class="sp"></div>
-                <a href="<?php echo site_url('/wp-admin/admin-ajax.php?action=github_oauth_redirect'); ?>" class="btn btn-primary btn-lg btn-round btn-ghost">
-                    <i class="icon icon-github"></i> Quero participar
-                </a>
-            </div>
-        <?php endif; ?>
-    </div>
-</section>
-
-<section class="section section--featured section--bg text-center">
-    <div class="container">
-        <h3 class="section__subtitle">Quer contribur com projetos open sources e participar de eventos no Paraná?</h3>
-        <a href="<?php echo get_permalink( get_page_by_path( 'como-contribuir-para-a-phppr' ) ) ?>" class="btn btn-white btn-lg btn-round btn-ghost">
-            Contribuir com a PHP Paraná
-        </a>
-    </div>
-</section>
+<?php get_template_part( 'inc/section-members' ) ?>
 
 <?php get_footer(); ?>

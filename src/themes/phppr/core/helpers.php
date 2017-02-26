@@ -246,30 +246,14 @@ function odin_breadcrumbs( $homepage = '' ) {
 
 			// Checks if is a custom post type.
 			if ( 'post' != $post->post_type ) {
-				// But if Woocommerce
-				if ( 'product' === $post->post_type ) {
-					if ( is_woocommerce_activated() ) {
-						$shop_page    = get_post( wc_get_page_id( 'shop' ) );
-						echo '<li><a href="' . esc_url( get_permalink( $shop_page ) ) . '">' . get_the_title( $shop_page ) . '</a></li>';
-					}
+                $post_type = get_post_type_object( $post->post_type );
 
-					// Gets post type taxonomies.
-					$taxonomies = get_object_taxonomies( 'product' );
-					$taxonomy = 'product_cat';
-				} else {
-					$post_type = get_post_type_object( $post->post_type );
+                echo '<li><a href="' . get_post_type_archive_link( $post_type->name ) . '">' . $post_type->label . '</a></li> ';
 
-					echo '<li><a href="' . get_post_type_archive_link( $post_type->name ) . '">' . $post_type->label . '</a></li> ';
-
-					// Gets post type taxonomies.
-					$taxonomies = get_object_taxonomies( $post_type->name );
-				}
+                // Gets post type taxonomies.
+                $taxonomies = get_object_taxonomies( $post_type->name );
 
 				if ( $taxonomies ) {
-					// If is woocommerce product post type, $taxonomy already defined
-					if ( 'product' !== $post->post_type ) {
-						$taxonomy = $taxonomies[0];
-					}
 					// Gets post terms.
 					$terms = get_the_terms( $post->ID, $taxonomy );
 					$term  = $terms ? array_shift( $terms ) : '';
@@ -364,14 +348,7 @@ function odin_breadcrumbs( $homepage = '' ) {
 
 		// Custom post type archive.
 		} elseif ( is_post_type_archive() ) {
-			// Check if Woocommerce Shop
-			if ( is_woocommerce_activated() && is_shop() ) {
-				$shop_page_id = wc_get_page_id( 'shop' );
-				echo $current_before . get_the_title( $shop_page_id ) . $current_after;
-
-			} else {
-				echo $current_before . post_type_archive_title( '', false ) . $current_after;
-			}
+            echo $current_before . post_type_archive_title( '', false ) . $current_after;
 
 		// Search page.
 		} elseif ( is_search() ) {
@@ -409,15 +386,9 @@ function odin_breadcrumbs( $homepage = '' ) {
 
 			// Displays the post type that the taxonomy belongs.
 			if ( ! empty( $taxonomy->object_type ) ) {
-				// Get correct Woocommerce Post Type crumb
-				if ( is_woocommerce() ) {
-					$shop_page    = get_post( wc_get_page_id( 'shop' ) );
-					echo '<li><a href="' . esc_url( get_permalink( $shop_page ) ) . '">' . get_the_title( $shop_page ) . '</a></li>';
-				} else {
-					$_post_type = array_shift( $taxonomy->object_type );
-					$post_type = get_post_type_object( $_post_type );
-					echo '<li><a href="' . get_post_type_archive_link( $post_type->name ) . '">' . $post_type->label . '</a></li> ';
-				}
+                $_post_type = array_shift( $taxonomy->object_type );
+                $post_type = get_post_type_object( $_post_type );
+                echo '<li><a href="' . get_post_type_archive_link( $post_type->name ) . '">' . $post_type->label . '</a></li> ';
 			}
 
 			// Displays parent term.

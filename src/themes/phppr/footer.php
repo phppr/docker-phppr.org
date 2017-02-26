@@ -1,4 +1,6 @@
 
+        <?php get_template_part( 'inc/section-contribute' ) ?>
+
         <div class="clearfix"></div>
 
         <footer class="main-footer">

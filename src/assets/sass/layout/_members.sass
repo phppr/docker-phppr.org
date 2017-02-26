@@ -5,17 +5,25 @@
   &__item
     font-size: .8em
     text-align: center
-    min-height: 210px
     width: 45%
+    min-height: 160px
     vertical-align: top
     display: inline-block
     padding: 0 $small-spacing
+    position: relative
+
+    > a
+      display: block
+      padding: 0
 
     +media($container-desktop)
-      width: percentage(1/6)
+      width: percentage(1/7)
 
     img
-      max-height: 150px
+      max-height: 120px
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+      transition: .15s box-shadow ease-in-out
+      display: inline
 
     > a:after
       content: ''
@@ -23,6 +31,46 @@
     a
       color: $base-font-color
 
+      &, &:hover, &:focus, &:active
+        text-decoration: none
+
     span
       margin-top: ($small-spacing / 2)
       display: block
+
+    &:hover,
+    &:focus
+      img
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+
+      .member-list__meta
+        opacity: 1
+        transform: translate3d(-50%, -120%, 0)
+
+  &__meta
+    background-color: #1B2500
+    opacity: 0
+    transform: translate3d(-50%, -90%, 0)
+    width: 100%
+    border-radius: 3px
+    padding: 5px 10px
+    transition: .15s transform ease-in-out, .15s opacity ease-in-out
+
+    +position(absolute, 0 null null 50%)
+
+    &:after
+      top: 100%
+      left: 50%
+      border: solid transparent
+      content: " "
+      height: 0
+      width: 0
+      position: absolute
+      pointer-events: none
+      border-color: rgba(27, 37, 0, 0)
+      border-top-color: #1B2500
+      border-width: 10px
+      transform: translate3d(-50%, 0, 0)
+
+    &, a
+      color: #fff

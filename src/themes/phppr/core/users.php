@@ -23,11 +23,6 @@ function user_information_meta() {
                 'id' => 'github_username',
                 'label' => __( 'Github username', 'odin' ),
                 'type' => 'text'
-            ),
-            array(
-                'id' => 'twitter_username',
-                'label' => __( 'Twitter username', 'odin' ),
-                'type' => 'text'
             )
         )
     );
