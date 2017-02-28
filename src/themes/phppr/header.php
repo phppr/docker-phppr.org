@@ -13,13 +13,13 @@
         <header class="main-header">
             <div class="container">
                 <div class="row">
-                    <div class="logo col-md-3">
+                    <div class="logo col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-3 col-md-offset-0">
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Imagem Logo de <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
                         </a>
                     </div>
 
-                    <div class="header-search-form col-md-7">
+                    <div class="header-search-form col-sm-6 col-xs-12 col-md-7">
                         <form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
                             <div class="input-group input-group-lg">
                                 <input type="search" class="form-control" name="s" value="<?php echo get_search_query(); ?>" placeholder="Procurar na phppr.org" required>
@@ -40,7 +40,7 @@
                         );
                     ?>
 
-                    <div class="header-social col-md-2">
+                    <div class="header-social col-sm-6 col-xs-12 col-md-2">
                         <ul class="list-inline pull-right">
                             <?php foreach($social as $k => $s): ?>
                                 <li class="header-social__<?php echo $k ?>">

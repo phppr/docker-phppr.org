@@ -5,11 +5,15 @@
   +clearfix
 
   .logo
-    +media(max-width $container-desktop)
-      padding: $small-spacing 0
+    a
       display: block
-      width: 100%
-      text-align: center
+      padding: 0 $small-spacing
+
+    // +media(max-width $container-tablet)
+    //   padding: $small-spacing 0
+    //   display: block
+    //   width: 100%
+    //   text-align: center
 
 .header-search-form
   padding-top: 15px
