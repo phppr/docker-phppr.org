@@ -3,10 +3,17 @@
     font-size: 1.8em
     position: relative
     letter-spacing: -.03em
-    color: rgba($dark-gray, .9)
+    color: rgba($gray-dark, .8)
     text-transform: uppercase
     margin-top: $small-spacing
-    margin-bottom: 0
+    margin-bottom: $small-spacing
+
+    &:after
+      content: ''
+      display: block
+      width: 50px
+      height: 4px
+      background-color: $green
 
     +media($container-desktop)
       font-size: 2em
@@ -37,6 +44,9 @@
       text-align: center
       margin-bottom: $base-spacing
 
+      &:after
+        margin: 0 auto
+
   &--bg
     padding-top: ($base-spacing * 4)
     padding-bottom: ($base-spacing * 4)
@@ -48,6 +58,14 @@
       margin-bottom: $large-spacing
       font-weight: 300
       font-size: 1.4em
+
+      &:after
+        content: ''
+        display: block
+        width: 50px
+        height: 4px
+        background-color: #fff
+        margin: $small-spacing auto 0
 
       +media($container-desktop)
         font-size: 2.3em
@@ -78,6 +96,6 @@
   &--large
     height: $large-spacing
 
-// body.home
-//   .section__title
-
+.jumbotron
+  .section__title:after
+    margin: $small-spacing auto

@@ -11,7 +11,7 @@ get_header(); ?>
 	    <main id="content" class="<?php echo odin_classes_page_full(); ?> card" role="main">
             <div class="jumbotron text-center">
                 <header class="page-header">
-                    <h1 class="page-title">Oops.. <?php _e( 'Not Found', 'odin' ); ?>!</h1>
+                    <h1 class="page-title section__title">Oops.. <?php _e( 'Not Found', 'odin' ); ?>!</h1>
                 </header>
 
                 <div class="page-content">
