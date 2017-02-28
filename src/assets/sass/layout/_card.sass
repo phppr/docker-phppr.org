@@ -40,13 +40,16 @@ a[target="_blank"]
     margin-left: 5px
 
 +media(max-width $container-tablet)
-  body.single
-    .article
-      margin-right: -($small-spacing)
-      margin-left: -($small-spacing)
+  body.page .container .section
+    margin-right: -($base-spacing)
+    margin-left: -($base-spacing)
+    overflow: hidden
 
-    .article__heading
-      text-align: center
+  body.single .container .article,
+  body.archive .container .section
+    margin-right: -($small-spacing)
+    margin-left: -($small-spacing)
+    overflow: hidden
 
   .github-corner
     display: none

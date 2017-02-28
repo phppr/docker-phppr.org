@@ -39,15 +39,16 @@
           padding-top: $small-spacing
           padding-bottom: $small-spacing
 
-      &:not(:last-child):after
-        content: ''
-        width: 1px
-        height: 25px
-        background-color: #fff
-        position: absolute
-        right: 0
-        top: 12px
-        opacity: .3
+      +media($container-tablet)
+        &:not(:last-child):after
+          content: ''
+          width: 1px
+          height: 25px
+          background-color: #fff
+          position: absolute
+          right: 0
+          top: 12px
+          opacity: .3
 
     .nav-item
       &--iframe
