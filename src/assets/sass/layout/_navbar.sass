@@ -4,12 +4,40 @@
   border-radius: 0
   margin: 0
 
+  .navbar-toggle
+    color: #fff
+    width: 100%
+    margin: 0
+    float: none
+    border: none
+    border-radius: 0
+    padding-top: $small-spacing
+    padding-bottom: $small-spacing
+
+    .icon-menu
+      position: relative
+      top: 1px
+
+    > span
+      display: inline-block
+
+    &:hover,
+    &:focus,
+    &:active
+      border: none
+      background-color: transparent
+
+
   .nav.navbar-nav
     > li
       position: relative
 
-      &.to-home > a
-        padding-left: 0
+      +media(max-width $container-desktop)
+        text-align: center
+
+        > a
+          padding-top: $small-spacing
+          padding-bottom: $small-spacing
 
       &:not(:last-child):after
         content: ''
