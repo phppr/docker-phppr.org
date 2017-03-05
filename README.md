@@ -1,6 +1,6 @@
-# Portal [PHPPR.org](http://phppr.org/)
+# [PHPPR.org](http://phppr.org/)
 
-> Portal do Grupo de Desenvolvedores PHP do Paraná.
+> Site do Grupo de Desenvolvedores PHP do Paraná.
 
 [![Stories in Ready](https://badge.waffle.io/phppr/phppr.org.svg?label=ready&title=Ready)](http://waffle.io/phppr/phppr.org)
 
