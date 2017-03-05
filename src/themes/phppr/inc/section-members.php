@@ -6,12 +6,13 @@
         <ul class="member-list list-unstyled">
             <?php foreach($members as $member):
                 $github_username = get_user_meta( $member->ID, 'github_username', true);
+                $github_avatar = "https://github.com/{$github_username}.png?size=200";
                 $github_url = get_user_meta( $member->ID, 'github_url', true);
                 $member_url = ($github_url) ? $github_url : $member->user_url;
             ?>
                 <li class="member-list__item">
                     <a href="<?php echo $member_url ?>" target="_blank">
-                        <img src="<?php echo get_avatar_url($member->user_email, array('size' => 140)) ?>" alt="Foto do perfil de <?php echo $member->display_name ?>" class="img-circle">
+                        <img src="<?php echo get_avatar_url($member->user_email, array('size' => 140, 'default' => $github_avatar)) ?>" alt="Foto do perfil de <?php echo $member->display_name ?>" class="img-circle">
                     </a>
 
                     <?php if($github_username): ?>
