@@ -16,3 +16,7 @@ Primeiramente dê um fork do repositório para sua conta. Crie um branch e reali
 > :warning: Não serão aceitos Pull Request vindas do branch master do repositório "forkeado". Caso nunca tenha realizado um Pull Request, o git tem um tutorial bem bacana que servirá de guia (https://help.github.com/articles/using-pull-requests).
 
 Sintam-se a vontade para sugerir melhorias ou mesmo criticar algo que foi feito de forma ruim.
+
+## Instalação ##
+
+Para saber como instalar e configurar o projeto em sua máquina leita atentamente o arquivo [INSTALATION.md](/INSTALATION.md)
