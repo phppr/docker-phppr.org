@@ -4,6 +4,8 @@
 
 [![Stories in Ready](https://badge.waffle.io/phppr/phppr.org.svg?label=ready&title=Ready)](http://waffle.io/phppr/phppr.org)
 
+![screenshot of phppr.org](/src/themes/phppr/screenshot.png)
+
 ## Contribuições ##
 
 Leia atentamente o arquivo [CONTRIBUTING.md](/CONTRIBUTING.md)
