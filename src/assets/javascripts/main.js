@@ -1,5 +1,5 @@
 //=include bootstrap-sass/assets/javascripts/bootstrap.min.js
-//=include fancybox/dist/jquery.fancybox.min.js
+//=include fancybox/dist/js/jquery.fancybox.js
 
 (function($) {
   $(document).ready(function() {
@@ -35,7 +35,7 @@
     loop: false,
     thumbs: {
       autoStart: true
-    },
+    }
   };
 
   $('.entry-content img').parent().fancybox(_fancyOptions);
