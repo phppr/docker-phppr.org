@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@fancyapps/fancybox@^3.1.20":
+  version "3.1.20"
+  resolved "https://registry.yarnpkg.com/@fancyapps/fancybox/-/fancybox-3.1.20.tgz#9dbf1b0e2212950144d736e21fe894a52e51d250"
+
 abbrev@1:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.0.9.tgz#91b4792588a7738c25f35dd6f63752a2f8776135"
@@ -1438,10 +1442,6 @@ fancy-log@^1.1.0, fancy-log@^1.2.0:
   dependencies:
     chalk "^1.1.1"
     time-stamp "^1.0.0"
-
-fancybox:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/fancybox/-/fancybox-3.0.0.tgz#8c21af8142c621bed7d551ba69c4c38eaecd2e04"
 
 fd-slicer@~1.0.1:
   version "1.0.1"

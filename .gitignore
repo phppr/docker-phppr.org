@@ -49,6 +49,9 @@ src/themes/phppr/assets
 # Yarn Integrity file
 .yarn-integrity
 
+.runtime
 docker-runtime
+src/uploads/
+!src/uploads/index.php
 src/plugins/
 !src/plugins/index.php

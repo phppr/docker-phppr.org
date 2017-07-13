@@ -1,11 +1,11 @@
 //=include bootstrap-sass/assets/javascripts/bootstrap.min.js
-//=include fancybox/dist/js/jquery.fancybox.js
+//=include @fancyapps/fancybox/dist/jquery.fancybox.min.js
 
 (function($) {
   $(document).ready(function() {
     var $jobs = $('#phpprJobs');
     $.ajax({
-      url: "https://api.github.com/repos/phppr/vagas/issues",
+      url: "//api.github.com/repos/phppr/vagas/issues",
       success: function(result) {
         var _item = '';
         $.each(result, function(i, issue) {

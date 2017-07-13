@@ -8,6 +8,7 @@ services:
     container_name: phppr_web
     volumes:
       - "./src/themes:/var/www/html/wp-content/themes"
+      - "./src/uploads:/var/www/html/wp-content/uploads"
       - "./src/plugins:/var/www/html/wp-content/plugins"
     links:
       - mysqldb:mysqldb
@@ -23,7 +24,7 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
     volumes:
-      - ./docker-runtime/mysql:/var/lib/mysql
+      - ./.runtime/mysql:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -38,4 +39,4 @@ services:
     ports:
       - 8001:80
     volumes:
-      - ./docker-runtime/sessions:/sessions
+      - ./.runtime/sessions:/sessions

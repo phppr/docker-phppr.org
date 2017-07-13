@@ -47,7 +47,7 @@
     transition: .2s opacity ease-in-out
     background-color: #dcdcdc
     position: relative
-    min-height: 150px
+    min-height: 190px
     display: block
 
     +clearfix
@@ -88,3 +88,40 @@
 
   p
     color: #444
+
+.error404
+  .breadcrumbs
+    margin: 0
+
+  .section--featured
+    margin: 0
+
+.travolta-404
+  background: url('../images/travolta-404.gif') no-repeat 50%
+  background-size: cover
+  min-height: 950px
+  display: table
+  width: 100%
+
+  .jumbotron
+    background: none
+    padding: 0
+    margin: 0
+    display: table-cell
+    vertical-align: middle
+
+    h1
+      font-size: 10rem
+
+    p
+      font-size: 1.5rem
+
+  .page-title:after
+    display: none
+
+  .lead,
+  .page-title span
+    background-color: rgba(#000, .6)
+    color: #fff
+    display: inline-block
+    padding: 5px 15px

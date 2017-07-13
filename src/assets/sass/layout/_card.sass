@@ -23,8 +23,11 @@
     width: 100%
 
   &--twitter
-    height: 773px
+    height: 835px
     padding-top: $small-spacing
+
+    iframe
+      width: 100% !important
 
     +media($container-desktop)
       padding-top: $small-spacing
@@ -32,6 +35,7 @@
   &--notifications
     height: 277px
     overflow-y: auto
+    margin-bottom: $base-spacing
 
 a[target="_blank"]
   &:after
