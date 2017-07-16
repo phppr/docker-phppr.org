@@ -17,18 +17,16 @@ body
   color: $base-font-color
   font-family: $font-family-base
   font-size: $base-font-size
-  line-height: $base-line-height
-  font-weight: 300
-
-p
-  margin: 0 0 $base-spacing
+  font-weight: 400
 
 a
+  color: $link-color
   text-decoration: none
   transition: color .15s ease-in-out, opacity .15s ease-in-out
 
   &:hover,
   &:focus
+    color: $link-hover-color
     text-decoration: underline
 
 h1,
@@ -39,9 +37,18 @@ h5,
 h6
   font-family: $heading-font-family
   line-height: $heading-line-height
-  margin: 0 0 $base-spacing
-  letter-spacing: -.02rem
+  margin: $small-spacing 0
   font-weight: 700
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p
+  &:last-child
+    margin-bottom: 0
 
 h1
   font-size: 2rem
@@ -58,20 +65,3 @@ h4
 h5,
 h6
   font-size: 1rem
-
-ul,
-ol
-  padding-left: $base-spacing
-  margin: 0 0 $base-spacing
-
-li
-  ul,
-  ol
-    padding-left: $small-spacing
-    margin: 0
-
-ul
-  list-style: disc
-
-ol
-  list-style: decimal

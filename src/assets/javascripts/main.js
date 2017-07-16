@@ -3,7 +3,6 @@
 
 (function($) {
   $(document).ready(function() {
-    var $jobs = $('#phpprJobs');
     $.ajax({
       url: "//api.github.com/repos/phppr/vagas/issues",
       success: function(result) {
@@ -26,7 +25,7 @@
           _item += '</span>';
           _item += '</li>';
         });
-        $jobs.html(_item);
+        $('#phpprJobs').html(_item);
       }
     });
   });
@@ -38,6 +37,6 @@
     }
   };
 
-  $('.entry-content img').parent().fancybox(_fancyOptions);
-  $('.entry-content .gallery-item a').fancybox(_fancyOptions);
+  $('a[href$=".jpg"]').fancybox(_fancyOptions);
+  $('a[href$=".png"]').fancybox(_fancyOptions);
 })(jQuery);
