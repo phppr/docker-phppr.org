@@ -22,17 +22,14 @@ Agora acesse: [localhost](http://localhost/) e faça sua instalação do WP.
 
 ## Instalação e build dos assets
 
-> Para os assets do projeto usamos o [nodejs](https://nodejs.org/en/) com [gulpjs](http://gulpjs.com/) e
-> [Bower](https://bower.io/) então tenha-os instalados em sua máquina.
+> Para os assets do projeto usamos o [nodejs](https://nodejs.org/en/) com [gulpjs](http://gulpjs.com/) então tenha-os instalados em sua máquina.
 
 ### Instalação
 
 Com o Nodejs, Bower e Gulpjs instalados execute a seguinte sequência de comandos:
 
 ```
-cd src/assets/
 npm install
-bower install
 ```
 
 ### Build e watch
@@ -64,3 +61,9 @@ Para criar os arquivos de produção execute o `gulp build` com o sub comando `-
 ```
 gulp build --type production
 ```
+ou
+```
+npm run prod
+```
+
+Divirta-se :enjoy:
