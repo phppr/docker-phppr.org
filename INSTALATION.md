@@ -66,4 +66,4 @@ ou
 npm run prod
 ```
 
-Divirta-se :enjoy:
+Divirta-se :joy:
