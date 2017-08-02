@@ -6,25 +6,26 @@ import notify from 'gulp-notify'
 import gutil from 'gulp-util'
 
 const isProduction = gutil.env.type === 'production'
+const themePath = `./src/themes/${pkg.name}`
 
 module.exports = {
   isProduction: isProduction,
   src: {
-    sass: './sass',
-    javascripts: './javascripts',
-    images: './images',
+    sass: './src/assets/sass',
+    javascripts: './src/assets/javascripts',
+    images: './src/assets/images',
     components: './node_modules'
   },
   dist: {
-    css: `../themes/${pkg.name}/assets/css`,
-    js: `../themes/${pkg.name}/assets/js`,
-    images: `../themes/${pkg.name}/assets/images`,
-    fonts: `../themes/${pkg.name}/assets/fonts`,
+    css: `${themePath}/assets/css`,
+    js: `${themePath}/assets/js`,
+    images: `${themePath}/assets/images`,
+    fonts: `${themePath}/assets/fonts`,
   },
   plumberErrorHandler: {
     errorHandler: notify.onError({
-      title   : 'Gulp',
-      message : 'Error: <%= error.message %>'
+      title: 'Gulp',
+      message: 'Error: <%= error.message %>'
     })
   },
   cssnano: {
@@ -44,7 +45,7 @@ module.exports = {
     extensions: 'js',
     includePaths: [
       './node_modules',
-      './javascripts'
+      './src/assets/javascripts'
     ]
   },
   sassConfig: {
@@ -52,7 +53,7 @@ module.exports = {
     includePaths: [
       bourbon.includePaths,
       './node_modules',
-      './sass'
+      './src/assets/sass'
     ]
   },
   banner: [

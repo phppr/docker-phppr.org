@@ -6,7 +6,8 @@
   "scripts": {
     "build": "gulp build",
     "start": "gulp watch",
-    "dev": "npm start"
+    "dev": "gulp watch",
+    "prod": "gulp build --type production"
   },
   "repository": {
     "type": "git",
