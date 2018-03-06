@@ -12,6 +12,10 @@
   +media($container-desktop)
     padding: $base-spacing
 
+  &__inner
+    overflow-y: auto
+    padding: $small-spacing
+
   &__view-all
     display: block
     text-align: center
@@ -22,12 +26,13 @@
     font-size: .8em
     width: 100%
 
-  &--twitter
-    height: 835px
-    padding-top: $small-spacing
-
+  &.card--twitter
+    padding: 0
+    .card__inner
+      max-height: 880px
     iframe
-      width: 100% !important
+      width: 100%
+      height: 100%
 
     +media($container-desktop)
       padding-top: $small-spacing
