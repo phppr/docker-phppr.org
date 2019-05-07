@@ -40,9 +40,9 @@
     "node-bourbon": "^4.2.8"
   },
   "dependencies": {
-    "@fancyapps/fancybox": "^3.1.20",
-    "bootstrap-sass": "^3.3.7",
+    "@fancyapps/fancybox": "^3.5.7",
+    "bootstrap-sass": "^3.4.1",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.2.1"
+    "jquery": "^3.4.1"
   }
 }
